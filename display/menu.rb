@@ -1,4 +1,4 @@
-def start_menu(products)
+def start_menu
   loop do
     puts color_text("#{'=' * 6} choose one of the options below #{'=' * 6}", "yellow")
     puts "#{color_text("1", "red")} - #{color_text(" Products registration", "blue")}"
@@ -13,7 +13,7 @@ def start_menu(products)
     when 1
       product_registration(products)
     when 2
-      list_products(products)
+      list_products
     when 3
       stock_withdrawal(products)
     when 4
