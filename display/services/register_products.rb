@@ -1,4 +1,4 @@
-def product_registration(products)
+def product_registration
   message("Iniciating product registration...", true, true, 1.5)
 
   message(color_text("Type the product's name: ", "blue"), false, false)
@@ -24,13 +24,15 @@ def product_registration(products)
   quantity = gets.to_i
   clean_screen
 
-  products << ({
+  p = Product.new({
     id: Time.now.to_i,
-    name: ,
+    name:,
     description:,
     price:,
     quantity:
   })
+
+  ProductService.add(p)
 
   message([color_text("O produto ", "green"),
            color_text(name, "yellow"),

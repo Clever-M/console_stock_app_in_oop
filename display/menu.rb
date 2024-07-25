@@ -11,11 +11,11 @@ def start_menu
 
     case option
     when 1
-      product_registration(products)
+      product_registration
     when 2
       list_products
     when 3
-      stock_withdrawal(products)
+      stock_withdrawal
     when 4
       clean_screen
       exit

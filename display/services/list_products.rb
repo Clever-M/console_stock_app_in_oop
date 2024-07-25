@@ -6,8 +6,8 @@ def list_products
   table = Terminal::Table.new do |t|
     t.headings = %w(ID Name Description Price Quantity)
 
-    ProductService.all.each do |row|
-      t.add_row [row.id, row.name, row.description, row.price, row.quantity]
+    ProductService.all.each do |product|
+      t.add_row [product.id, product.name, product.description, product.price, product.quantity]
     end
   end
 

@@ -6,6 +6,6 @@ class ProductService
   end
 
   def self.add(product)
-    @@products << Product.new(product)
+    @@products << product
   end
 end
