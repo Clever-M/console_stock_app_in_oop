@@ -3,8 +3,12 @@ require 'json'
 class JsonRepository
   def self.read(file)
     unless File.exist?(file)
-      puts "The file #{file} doesn't exist."
-      return nil
+      puts color_text("WARNING: The file #{file} doesn't exist.", "red")
+      puts color_text("WARNING: creating a new file", "red")
+      unless Dir.exist?(file)
+        system("mkdir", "db")
+      end
+      self.record(file, [])
     end
 
     begin
