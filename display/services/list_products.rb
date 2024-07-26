@@ -7,7 +7,7 @@ def list_products
     t.headings = %w(ID Name Description Price Quantity)
 
     ProductService.all.each do |product|
-      t.add_row [product["id"], product["name"], product["description"], product["price"], product["quantity"]]
+      t.add_row [product.id, product.name, product.description, product.price, product.quantity]
     end
   end
 

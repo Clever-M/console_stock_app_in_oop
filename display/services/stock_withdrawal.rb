@@ -35,6 +35,7 @@ def stock_withdrawal
   puts color_text("In stock: #{color_text(product.quantity, "yellow")}", "green")
   withdrawal_quantity = gets.to_i
   product.quantity -= withdrawal_quantity
+  ProductService.update(product)
 
   message(color_text("The product was withdrawn successfully!!!", "green"), true, true, 3)
   list_products

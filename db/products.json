@@ -25,6 +25,20 @@
     "name": "Marki",
     "description": "Marki is good",
     "price": 2.5,
-    "quantity": 53
+    "quantity": 35
+  },
+  {
+    "id": 1721969663,
+    "name": "Clever",
+    "description": "This is a good product",
+    "price": 2.5,
+    "quantity": 35
+  },
+  {
+    "id": 1721971274,
+    "name": "Johnny Cage",
+    "description": "it is a player",
+    "price": 4.5,
+    "quantity": 30
   }
 ]
