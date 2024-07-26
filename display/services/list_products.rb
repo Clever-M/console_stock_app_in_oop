@@ -1,4 +1,5 @@
 require 'terminal-table'
+require 'byebug'
 def list_products
   clean_screen
   message(color_text("=" * 6 + " Products' list " + "=" * 6, "yellow"), false, false)
@@ -7,7 +8,7 @@ def list_products
     t.headings = %w(ID Name Description Price Quantity)
 
     ProductService.all.each do |product|
-      t.add_row [product.id, product.name, product.description, product.price, product.quantity]
+      t.add_row [product["id"], product["name"], product["description"], product["price"], product["quantity"]]
     end
   end
 
