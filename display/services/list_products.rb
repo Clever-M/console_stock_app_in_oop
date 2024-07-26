@@ -1,5 +1,4 @@
 require 'terminal-table'
-require 'byebug'
 def list_products
   clean_screen
   message(color_text("=" * 6 + " Products' list " + "=" * 6, "yellow"), false, false)

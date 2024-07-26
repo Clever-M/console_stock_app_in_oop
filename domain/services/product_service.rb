@@ -1,4 +1,3 @@
-require 'byebug'
 class ProductService
   @file = "db/products.json"
   def self.all
@@ -19,7 +18,6 @@ class ProductService
 
   def self.turn_into_hash(product)
     product.instance_variables.each_with_object({}) do |var, hash|
-      debugger
       hash[var.to_s.delete("@")] = product.instance_variable_get(var)
     end
   end
