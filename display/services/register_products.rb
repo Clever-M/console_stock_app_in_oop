@@ -25,11 +25,11 @@ def product_registration
   clean_screen
 
   p = Product.new({
-    id: Time.now.to_i,
-    name:,
-    description:,
-    price:,
-    quantity:
+    "id"          => Time.now.to_i,
+    "name"        => name,
+    "description" => description,
+    "price"       => price,
+    "quantity"    => quantity
   })
 
   ProductService.add(p)

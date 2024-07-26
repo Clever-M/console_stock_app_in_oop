@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Potato",
+    "description": "Fresh amazing potato",
+    "price": 2.95,
+    "quantity": 50
+  },
+  {
+    "id": 2,
+    "name": "Carrot",
+    "description": "Big fresh carrots",
+    "price": 3.95,
+    "quantity": 20
+  },
+  {
+    "id": 3,
+    "name": "Bread",
+    "description": "French baguette",
+    "price": 5.95,
+    "quantity": 35
+  },
+  {
+    "id": 1721965425,
+    "name": "Marki",
+    "description": "Marki is good",
+    "price": 2.5,
+    "quantity": 53
+  }
+]
