@@ -1,6 +1,15 @@
 require 'terminal-table'
 def stock_withdrawal
   clean_screen
+  products = ProductService.all
+  if products.empty?
+    puts color_text("\n  #{'<' * 6} No products registered yet, please register some products #{'>' * 6}", "purple")
+    puts color_text("\n#{'=' * 6} Press enter to close #{'=' * 6}", "yellow")
+    gets
+    clean_screen
+    return
+  end
+
   message(color_text("=" * 6 + " Choose one of the products below " + "=" * 6, "yellow"), false, false)
 
   table = Terminal::Table.new do |t|
@@ -15,7 +24,7 @@ def stock_withdrawal
   puts color_text("Enter the product ID:", "blue")
   id = gets.to_i
 
-  product = ProductService.all.find{ |p| p.id == id }
+  product = products.find{ |p| p.id == id }
   unless product
     clean_screen
     message(color_text("Product with ID #{id} was not found!", "red"), false, false)

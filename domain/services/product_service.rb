@@ -1,7 +1,7 @@
 class ProductService
-  @file = "db/products.json"
+  FILE = "db/products.json"
   def self.all
-    data = JsonRepository.read(@file)
+    data = JsonRepository.read(FILE)
     products = []
     data.each do |datum|
       products << Product.new(datum)
@@ -12,11 +12,11 @@ class ProductService
   def self.add(product)
     product_hash = self.turn_into_hash(product)
 
-    JsonRepository.add(@file, product_hash)
+    JsonRepository.add(FILE, product_hash)
   end
 
   def self.update(product)
-    data = JsonRepository.read(@file)
+    data = JsonRepository.read(FILE)
     product_hash = data.find{ |datum| datum["id"] == product.id }
 
     product_hash["name"]        = product.name
@@ -24,7 +24,7 @@ class ProductService
     product_hash["price"]       = product.price
     product_hash["quantity"]    = product.quantity
 
-    JsonRepository.record(@file, data)
+    JsonRepository.record(FILE, data)
   end
 
   private

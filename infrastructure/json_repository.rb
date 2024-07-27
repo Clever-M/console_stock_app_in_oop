@@ -3,18 +3,19 @@ require 'json'
 class JsonRepository
   def self.read(file)
     unless File.exist?(file)
-      puts color_text("WARNING: The file #{file} doesn't exist.", "red")
-      puts color_text("WARNING: creating a new file", "red")
-      unless Dir.exist?(file)
-        system("mkdir", "db")
-      end
-      self.record(file, [])
+      puts color_text("File doesn't exits!", "red")
+
+      return nil
     end
 
     begin
       json_data = File.read(file)
       data = JSON.parse(json_data)
       return data
+    rescue JSON::ParserError => e
+      puts "Error when analysing the JSON file: #{e}"
+
+      return nil
     end
   end
 

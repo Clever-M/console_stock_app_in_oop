@@ -8,4 +8,11 @@ require_relative "domain/entities/product"
 require_relative "domain/services/product_service"
 require_relative "infrastructure/json_repository"
 
-start_menu
+clean_screen
+
+unless File.exist?(ProductService::FILE)
+  create_file(ProductService::FILE)
+  start_menu
+else
+  start_menu
+end
