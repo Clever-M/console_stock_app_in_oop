@@ -34,7 +34,7 @@ def product_registration
 
   ProductService.add(p)
 
-  message([color_text("O produto ", "green"),
+  message([color_text("The product ", "green"),
            color_text(name, "yellow"),
-           color_text(" foi cadastrado com sucesso!!!", "green")].join, true, true, 3)
+           color_text(" was registered successfully!!!", "green")].join, true, true, 3)
 end
