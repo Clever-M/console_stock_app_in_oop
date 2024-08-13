@@ -32,7 +32,7 @@ def product_registration
     "quantity"    => quantity
   })
 
-  ProductService.add(p)
+  ProductService.new($DRIVER, $FILE).add(p)
 
   message([color_text("The product ", "green"),
            color_text(name, "yellow"),

@@ -1,7 +1,7 @@
 require 'terminal-table'
 def stock_withdrawal
   clean_screen
-  products = ProductService.all
+  products = ProductService.new($DRIVER, $FILE).all
   if products.empty?
     puts color_text("\n  #{'<' * 6} No products registered yet, please register some products #{'>' * 6}", "purple")
     puts color_text("\n#{'=' * 6} Press enter to close #{'=' * 6}", "yellow")
@@ -15,7 +15,7 @@ def stock_withdrawal
   table = Terminal::Table.new do |t|
     t.headings = %w(ID Name Quantity)
 
-    ProductService.all.each do |product|
+    ProductService.new($DRIVER, $FILE).all.each do |product|
       t.add_row [product.id, product.name, product.quantity]
     end
   end
@@ -44,7 +44,7 @@ def stock_withdrawal
   puts color_text("In stock: #{color_text(product.quantity, "yellow")}", "green")
   withdrawal_quantity = gets.to_i
   product.quantity -= withdrawal_quantity
-  ProductService.update(product)
+  ProductService.new($DRIVER, $FILE).update(product)
 
   message(color_text("The product was withdrawn successfully!!!", "green"), true, true, 3)
   list_products
