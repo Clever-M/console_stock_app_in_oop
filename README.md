@@ -9,7 +9,7 @@ With this software you can:
 
 ## How to install
 ### Dependencies
-#### Ruby 3.3.1
+#### Ruby 3.3.4
 We recomend you to follow the steps to install a Ruby Environment Manager such as Rbenv or RVM:
 - [rbenv](https://github.com/rbenv/rbenv)
 - [RVM](https://github.com/rvm/rvm)
@@ -17,15 +17,15 @@ We recomend you to follow the steps to install a Ruby Environment Manager such a
 Once you have them installed, you can install the ruby version.
 - Rbenv
 ```bash
-rbenv install 3.3.1
-rbenv global 3.3.1
+rbenv install 3.3.4
+rbenv global 3.3.4
 ```
 - RVM install
 ```bash
-rvm install 3.3.1
-rbenv global 3.3.1
+rvm install 3.3.4
+rbenv global 3.3.4
 ```
-If you already use another ruby version on you computer, you can go to the file where the app was cloned and set 3.3.1 versions as local.
+If you already use another ruby version on you computer, you can go to the file where the app was cloned and set 3.3.4 versions as local.
 To do that, please read the documentations provided above.
 
 ### Cloning from github
@@ -54,9 +54,15 @@ ruby init.rb
 When you start the app, it will check if you already have a database file created.
 If you don't, you'll be asked if you want the app to craete if for you automatically.
 
+* Choose a file type
+
+![image](https://github.com/user-attachments/assets/9c20a687-751a-4378-b253-ae04825c38d8)
+
+* Then it will create a database based on the file you chose:
+
 ![image](https://github.com/user-attachments/assets/78c3a514-017e-4c70-9a91-153a4d8bc7a7)
 
-You can't continue without create a JSON file as you database.
+You can't continue without creating a database file as you database.
 
 After creating the database you'll be prompted with 4 options:
 
