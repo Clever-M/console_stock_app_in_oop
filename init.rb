@@ -13,7 +13,7 @@ require 'byebug'
 
 clean_screen
 
-create_dot_env unless File.exist?(".env")
+create_dot_env if File.zero?(".env")
 
 $FILE = "db/products.#{ENV["DB_TYPE"]}"
 $DRIVER = ENV["DB_TYPE"] == "json" ? JsonRepository : CsvRepository

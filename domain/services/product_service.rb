@@ -17,13 +17,13 @@ class ProductService
   def add(product)
     product_hash = self.turn_into_hash(product)
 
-
     @repo.add(@file, product_hash)
   end
 
   def update(product)
     data = @repo.read(@file)
-    product_hash = data.find{ |datum| datum["id"] == product.id }
+
+    product_hash = data.find{ |datum| datum["id"].to_i == product.id }
 
     product_hash["name"]        = product.name
     product_hash["description"] = product.description

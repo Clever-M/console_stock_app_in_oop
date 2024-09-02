@@ -3,10 +3,10 @@ class Product
   attr_reader :id
 
   def initialize(product_hash)
-    @id = product_hash["id"]
+    @id = product_hash["id"].to_i
     @name = product_hash["name"]
     @description = product_hash["description"]
-    @price = product_hash["price"]
-    @quantity = product_hash["quantity"]
+    @price = product_hash["price"].to_f
+    @quantity = product_hash["quantity"].to_i
   end
 end
